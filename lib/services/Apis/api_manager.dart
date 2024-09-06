@@ -19,11 +19,11 @@ class ApiManager{
     final dio = Dio();
     Response response = await dio.get('https://valorant-api.com/v1/agents');
     Map<String, dynamic> json = response.data;
-    List<dynamic> articlesData = json['data'];
+    List<dynamic> data = json['data'];
     List<DataAgent> agents = [];
 
-    for(var article in articlesData) {
-      agents.add(DataAgent.fromJson(article));
+    for(var i in data) {
+      agents.add(DataAgent.fromJson(i));
     }
 
     return agents;
@@ -34,14 +34,14 @@ class ApiManager{
     final dio = Dio();
     Response response = await dio.get('https://valorant-api.com/v1/maps');
     Map<String, dynamic> json = response.data;
-    List<dynamic> articlesData = json['data'];
-    List<DataMaps> agents = [];
+    List<dynamic> data = json['data'];
+    List<DataMaps> Maps = [];
 
-    for(var article in articlesData) {
-      agents.add(DataMaps.fromJson(article));
+    for(var i in data) {
+      Maps.add(DataMaps.fromJson(i));
     }
 
-    return agents;
+    return Maps;
   }
 
 
@@ -51,14 +51,14 @@ class ApiManager{
     final dio = Dio();
     Response response = await dio.get('https://valorant-api.com/v1/weapons');
     Map<String, dynamic> json = response.data;
-    List<dynamic> articlesData = json['data'];
-    List<DataWeapons> agents = [];
+    List<dynamic> data = json['data'];
+    List<DataWeapons> Weapons = [];
 
-    for(var article in articlesData) {
-      agents.add(DataWeapons.fromJson(article));
+    for(var i in data) {
+      Weapons.add(DataWeapons.fromJson(i));
     }
 
-    return agents;
+    return Weapons;
   }
 
 
