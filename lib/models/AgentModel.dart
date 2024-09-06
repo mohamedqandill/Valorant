@@ -4,7 +4,7 @@
 class AgentModel {
   AgentModel({
       num? status,
-      List<Data>? data,}){
+      List<DataAgent>? data,}){
     status = status;
     data = data;
 }
@@ -14,12 +14,12 @@ class AgentModel {
     if (json['data'] != null) {
       data = [];
       json['data'].forEach((v) {
-        data?.add(Data.fromJson(v));
+        data?.add(DataAgent.fromJson(v));
       });
     }
   }
   num? status;
-  List<Data>? data;
+  List<DataAgent>? data;
 
 }
 
@@ -46,8 +46,8 @@ class AgentModel {
 /// abilities : [{"slot":"Ability1","displayName":"Wingman","description":"EQUIP Wingman. FIRE to send Wingman forward seeking enemies. Wingman unleashes a concussive blast toward the first enemy he sees. ALT FIRE when targeting a Spike site or planted Spike to have Wingman defuse or plant the Spike. To plant, Gekko must have the Spike in his inventory. When Wingman expires he reverts into a dormant globule. INTERACT to reclaim the globule and gain another Wingman charge after a short cooldown.","displayIcon":"https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/abilities/ability1/displayicon.png"},{"slot":"Ability2","displayName":"Dizzy","description":"EQUIP Dizzy. FIRE to send Dizzy soaring forward through the air. Dizzy charges then unleashes plasma blasts at enemies in line of sight. Enemies hit by her plasma are Blinded. When Dizzy expires she reverts into a dormant globule. INTERACT to reclaim the globule and gain another Dizzy charge after a short cooldown.","displayIcon":"https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/abilities/ability2/displayicon.png"},{"slot":"Grenade","displayName":"Mosh Pit","description":"EQUIP Mosh. FIRE to throw Mosh like a grenade. ALT FIRE to lob. Upon landing Mosh duplicates across a large area that deals a small amount of damage over time then after a short delay explodes.","displayIcon":"https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/abilities/grenade/displayicon.png"},{"slot":"Ultimate","displayName":"Thrash","description":"EQUIP Thrash. FIRE to link with Thrash’s mind and steer her through enemy territory. ACTIVATE to lunge forward and explode, Detaining any players in a small radius. When Thrash expires she reverts into a dormant globule. INTERACT to reclaim the globule and gain another Thrash charge after a short cooldown. Thrash can be reclaimed once.","displayIcon":"https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/abilities/ultimate/displayicon.png"}]
 /// voiceLine : null
 
-class Data {
-  Data({
+class DataAgent {
+  DataAgent({
       String? uuid,
       String? displayName,
       String? description,
@@ -94,7 +94,7 @@ class Data {
     voiceLine = voiceLine;
 }
 
-  Data.fromJson(dynamic json) {
+  DataAgent.fromJson(dynamic json) {
     uuid = json['uuid'];
     displayName = json['displayName'];
     description = json['description'];

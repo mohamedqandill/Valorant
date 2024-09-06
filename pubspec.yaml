@@ -36,15 +36,16 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.3.7
+  http: ^1.1.0
+  dio: ^5.7.0
+  carousel_slider: ^5.0.0
+  cached_network_image: ^3.3.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-flutter_native_splash:
-  color: "0xff06111C"
-  image: assets/Logo Icon.png
-  android_gravity: fill
+
 
 
   # The "flutter_lints" package below contains a set of recommended lints to

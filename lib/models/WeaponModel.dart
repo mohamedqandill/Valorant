@@ -8,19 +8,19 @@ class WeaponModel {
     if (json['data'] != null) {
       data = [];
       json['data'].forEach((v) {
-        data?.add(Data.fromJson(v));
+        data?.add(DataWeapons.fromJson(v));
       });
     }
   }
   num? status;
-  List<Data>? data;
+  List<DataWeapons>? data;
 
 
 
 }
 
-class Data {
-  Data({
+class DataWeapons {
+  DataWeapons({
       this.uuid, 
       this.displayName, 
       this.category, 
@@ -32,7 +32,7 @@ class Data {
       this.shopData, 
       this.skins,});
 
-  Data.fromJson(dynamic json) {
+  DataWeapons.fromJson(dynamic json) {
     uuid = json['uuid'];
     displayName = json['displayName'];
     category = json['category'];

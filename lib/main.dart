@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valorant/modules/Charachter/charachter_details.dart';
 import 'package:valorant/modules/Home/home_screen.dart';
 
 void main() {
@@ -16,7 +17,12 @@ class MyApp extends StatelessWidget {
 
       title: 'Flutter Demo',
 
-      home: HomeScreen()
+      // home: HomeScreen()
+        routes: {
+      HomeScreen.routeName:(_)=>HomeScreen(),
+      CharacterDetails.routeName:(_)=>CharacterDetails(),
+    },
+      initialRoute: HomeScreen.routeName,
     );
   }
 }
