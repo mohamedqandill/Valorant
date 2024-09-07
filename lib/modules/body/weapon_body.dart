@@ -23,38 +23,46 @@ class WeaponBody extends StatelessWidget {
         ),
         Positioned(
           // bottom: 0,
-            bottom: 0,
-            right: 0,
-            child: Transform.rotate(
-              angle: 0.8,
-              child: Image.network(
-                data.displayIcon ?? "",
-                height: 60,
+            bottom: 20,
+            right: isEven?0:100,
+            left: !isEven?0:100,
+            child: Transform.flip(
+              flipX: !isEven?true:false,
+              child: Transform.rotate(
+                angle: 0.5,
+                child: Image.network(
+                  data.displayIcon ?? "",
+                  height: 60,
+                ),
               ),
             )),
 
         Padding(
           padding: const EdgeInsets.all(25.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Positioned(
-                left: 20,
-                child: Text(
-                  data.displayName ?? "",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35,
-                      color: Colors.white),
+          child: Container(
+            margin: EdgeInsets.only(left:!isEven? 230:0),
+            child: Column(
+               // crossAxisAlignment: CrossAxisAlignment.end
+              children: [
+                Positioned(
+                  // left: isEven?20:130,
+                  right: 30,
+                  child: Text(
+                    data.displayName ?? "",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35,
+                        color: Colors.white),
+                  ),
                 ),
-              ),
-              Text(
-                  "${data.category?.substring(21, 26) == "Heavy" ? "Weapons" : "Assualt"} ${data.category?.substring(21, 26) ?? ""}",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                      color: Colors.white))
-            ],
+                Text(
+                    "${data.category?.substring(21, 26) == "Heavy" ? "Weapons" : "Assualt"} ${data.category?.substring(21, 26) ?? ""}",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                        color: Colors.white))
+              ],
+            ),
           ),
         )
       ],
